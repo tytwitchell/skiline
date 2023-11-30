@@ -1,0 +1,27 @@
+:root {
+  font-family: "Geist Sans", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  /* color-scheme: light dark; */
+  background-color: hsl(0 0% 95%);
+  --letterSpacing: .1ch;
+  
+  text-rendering: optimizeLegibility;
+  /* font-synthesis: none; */
+  /* -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0
+}
+
+
+
+/* body {
+  font-family: 'Geist Sans', sans-serif;
+
+} */
+

@@ -1,0 +1,9 @@
+footer {
+    position: fixed;
+    bottom: 0;
+    background-color: hsl(0 0% 4%);
+    color: hsl(0 0% 97%);
+    width: 100%;
+    height: 4rem;
+}
+
