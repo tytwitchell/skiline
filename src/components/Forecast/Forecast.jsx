@@ -1,12 +1,15 @@
 import { useContext, useState, useEffect } from "react";
 import styles from "./forcast.module.css";
 import { AppContext } from "../../App";
+import uuid from "react-uuid";
+
 
 export default function Forecast() {
   const { data } = useContext(AppContext);
   const [apiData, setApiData] = useState([]);
   const [locationData, setLocationData] = useState([]);
   const [forecastData, setForecastData] = useState([]);
+  const [fullForecast, setFullForecast] = useState(false);
 
   useEffect(() => {
     if (data) {
@@ -20,26 +23,34 @@ export default function Forecast() {
       setLocationData(location);
       if (apiData.forecast) {
         const { forecastday } = apiData.forecast;
-        setForecastData(forecastday);
+        const newDayData = forecastday.map(day => {
+          const id = uuid();
+          return {
+            ...day,
+            id,
+          };
+        })
+        setForecastData(newDayData);
       }
     }
   }, [apiData]);
 
   console.log("forecastData", forecastData);
 
-  
-
   function forecastPreview() {
     if (forecastData && forecastData.length > 0) {
       const html = forecastData.map((data) => {
-        const { date, day } = data
+        const { date, day } = data;
         const { daily_chance_of_snow, daily_will_it_snow, totalsnow_cm } = day;
-        const totalSnowIn = Math.round((totalsnow_cm / 2.54 * 100) / 100)
+        const totalSnowIn = Math.round(((totalsnow_cm / 2.54) * 100) / 100);
         const dateVal = handleDate(date);
-      
 
         return (
-          <div key={date} className={styles.forecastPreview}>
+          <div
+            onClick={(e) => handleForecastClick(e)}
+            key={uuid()}
+            className={styles.forecastPreview}
+          >
             <span className={styles.dateName}>{dateVal.dayName}</span>
             <span className={styles.dateNum}>{dateVal.dayNum}</span>
             <p className={styles.totalSnow}>
@@ -49,6 +60,7 @@ export default function Forecast() {
           </div>
         );
       });
+
       return html;
     } else {
       console.log("HTML NOT WORKING");
@@ -62,16 +74,33 @@ export default function Forecast() {
     const num = dateObj.getUTCDate();
     return {
       dayName: days[weekDayNum + 1],
-      dayNum: num
+      dayNum: num,
     };
   }
 
+  function handleForecastClick(e) {
+    console.log(e)
+    setFullForecast(prev => !prev)
+  }
+
+  function ForecastDetails() {
+    /**
+     *   a) snow fall
+     *   b) temp
+     *   c) preciptation
+     *   d) forcast for sun or precip / clouds etc.
+     */
+
+
+
+    return <div className={styles.forecastDetailWrapper}>Full Forecast!!</div>;
+  }
 
   return (
     <>
-      <div className={styles.forcastContainer}>
-        {/* <span className={styles.empty}></span> */}
+      <div className={styles.forecastContainer}>
         <h3 className={styles.mtnName}>{locationData.name}</h3>
+        {fullForecast && <ForecastDetails />}
         <div className={styles.previewWrapper}>{forecastPreview()}</div>
       </div>
     </>

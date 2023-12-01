@@ -1,71 +1,85 @@
-.forcastContainer {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    /* grid-template-rows: repeat(2, auto); */
-    gap: 1rem;
-    color: hsl(0 0% 4%);
-    margin-inline: auto;
-    padding: 1rem 2.5rem;
-    min-width: fit-content;
-    max-width: 700px
+.forecastContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 1rem;
+  color: hsl(0 0% 4%);
+  margin-top: 3rem;
+  margin-inline: auto;
+  padding: 1rem 2.5rem;
+  min-width: fit-content;
+  max-width: 700px;
+  font-size: 20px;
+}
+
+.forecastDetailWrapper{
+    background-color:hsl(0 0% 90%);
+    border-radius: 8px;
+    
 }
 
 .previewWrapper {
-    grid-row: 1;
-    grid-column: 2;
-    align-self: first baseline;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 1rem;
+  grid-row: 2;
+  grid-column: 2;
+  align-self: first baseline;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
 }
 
 .mtnName {
-    grid-row: 1;
-    grid-column: 1;
-    margin-right: auto;
-    justify-self: center;
-    align-self: flex-end;
-    letter-spacing: var(--letterSpacing);
+  grid-row: 1;
+  grid-column: 1 / -1;
+  background-image: url("../../assets/whitemtnsbg1.jpg");
+  background-position: 50% 58%;
+  background-color: hsla(213, 97%, 14%, 0.3);
+  background-blend-mode: difference;
+  background-size: cover;
+  letter-spacing: var(--letterSpacing);
+  opacity: .8;
+  padding: 1rem;
+  border-radius: 8px
 }
 
 .forecastPreview {
-    display: grid;
-    justify-items: center;
-    padding: .5rem 2rem;
-    border-radius: 8px;
+  display: grid;
+  justify-items: center;
+  padding: 0.5rem 2rem;
+  border-radius: 8px;
 }
 
 .forecastPreview:hover,
 .forecastPreview:focus {
-    cursor: pointer;
-    background-color:hsl(0 0% 90% / .8)
+  cursor: pointer;
+  background-color: hsl(0 0% 90% / 0.8);
 }
 
 .forecastPreview:active {
-    box-shadow: inset 3px 3px 10px -3px hsl(0 0% 80%);
+  box-shadow: inset 3px 3px 10px -3px hsl(0 0% 80%);
 }
 .dateName {
-    font-weight: 600;
-    font-size: .85rem;
-    color: hsl(0 0% 35% / .8);
+  font-weight: 600;
+  font-size: 0.85em;
+  color: hsl(0 0% 35% / 0.8);
+  margin: 0;
 }
 
 .dateNum {
-    font-weight: 600;
-    font-size: .85rem;
-    color: hsl(0 0% 4% / .8);
+  font-weight: 600;
+  font-size: 0.85em;
+  color: hsl(0 0% 4% / 0.8);
+  margin: 0;
 }
 
 .totalSnow {
-    margin-top: 1rem;
-    letter-spacing: var(--letterSpacing);
+  margin-top: 1rem;
+  letter-spacing: var(--letterSpacing);
+  margin-right: -0.3em;
 }
 
 .totalSnow > span {
-    font-size: .75em;
-    margin-left: .25em
+  font-size: 0.75em;
+  margin-left: 0.15em;
 }
-
-
-

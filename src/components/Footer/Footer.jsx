@@ -1,13 +1,14 @@
 import React from "react";
-import styles from "./footer.module.css";
+import styles from './footer.module.css'
+import { GiMountains } from "react-icons/gi";
 
 export default function Footer() {
   return (
-    <Footer>
-      <span>&copy; 2023 Tyler Twitchell </span>
-      <span>
-        Powered by <span>Snow Lovers</span>
-      </span>
-    </Footer>
+    <footer>
+      <GiMountains className={styles.logo} size="1.5rem" color="hsl(0 0% 100%)" />
+      <p>
+        Powered by <span>Snow</span>
+      </p>
+    </footer>
   );
 }
