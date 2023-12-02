@@ -1,6 +1,6 @@
 header {
   padding: .5rem;
-  background-color: hsl(0 0% 100% / .1);
+  
   /* background-position: 75% 40%;
   background-size: cover;
   background-image: url(../../assets/whitemtnsbg2.jpg);
@@ -19,7 +19,7 @@ nav {
   background-position: 70% 63%;
   background-size: cover;
   background-image: url(../../assets/whitemtnsbg2.jpg);
-  background-color: hsl(213 100% 25%);
+  background-color: hsla(212, 5%, 48%, 0.45);
   background-blend-mode: difference;
   color: hsl(180 1% 77%);
   box-shadow: 3px 3px 15px 0px hsl(213 100% 4%);

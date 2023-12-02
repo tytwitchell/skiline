@@ -28,8 +28,9 @@
   grid-column: 1 / -1;
   background-image: url("../../assets/whitemtnsbg1.jpg");
   background-position: 50% 58%;
-  background-color: hsla(213, 97%, 14%, 0.3);
+  background-color: hsla(213, 6%, 32%, 0.25);
   background-blend-mode: difference;
+  /* color: hsl(180 1% 77%); */
   background-size: cover;
   border-image: linear-gradient(
       160deg,
@@ -87,17 +88,18 @@
   position: relative;
   background-image: url("../../assets/whitemtnsbg1.jpg");
   background-position: 50% 58%;
-  background-color: hsla(213, 97%, 14%, 0.3);
+  background-color: hsla(213, 6%, 32%, 0.595);
   background-blend-mode: difference;
   background-size: cover;
   /* background-image: url("../../assets/cloudy.jpg");
   background-color: hsl(0 0% 90%); */
   background-size: cover;
   background-repeat: no-repeat;
+  
 }
 
 .backdrop {
-  backdrop-filter: blur(2px) saturate(200%);
+  backdrop-filter: blur(2px);
 }
 
 .forecastDetailWrapper {
