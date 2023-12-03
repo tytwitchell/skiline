@@ -1,9 +1,13 @@
-import React from "react";
+import { useContext } from "react";
 import { GiMountains } from "react-icons/gi";
 import styles from "./header.module.css";
+import { AppContext } from "../../App";
+
+
+
 
 export default function Header() {
-  
+
   function handleSearch(e) {
     console.log(e.target.value);
   }

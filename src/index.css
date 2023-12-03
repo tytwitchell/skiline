@@ -38,7 +38,6 @@ body {
   position: absolute;
   z-index: -1;
   background-image: url("./assets/texture3.jpg");
-  background-color: hsl(0 0% 90%);
   background-blend-mode: color-burn;
   background-size: cover;
   background-repeat: no-repeat;

@@ -3,9 +3,10 @@ import styles from "./forcast.module.css";
 import { AppContext } from "../../App";
 import uuid from "react-uuid";
 import { BsSnow2 } from "react-icons/bs";
+import { TbSunMoon } from "react-icons/tb";
 
 export default function Forecast() {
-  const { data } = useContext(AppContext);
+  const { data, darkMode, setDarkMode } = useContext(AppContext);
   const [apiData, setApiData] = useState([]);
   const [locationData, setLocationData] = useState([]);
   const [forecastData, setForecastData] = useState([]);
@@ -38,6 +39,20 @@ export default function Forecast() {
     }
   }, [apiData]);
 
+  function toggleDarkMode() {
+    setDarkMode((prevDarkMode) => !prevDarkMode);
+  }
+
+  const stylesRotate = {
+    transform: darkMode ? "rotate(180deg)" : "none",
+    transition: "transform 0.5s ease",
+  };
+
+  const stylesDarkMode = {
+    backgroundColor: darkMode ? "hsl(0 0% 5% )" : "hsl(0 0% 90%)",
+    transition: "background-color .5s ease",
+  };
+
   function forecastPreview() {
     if (forecastData && forecastData.length > 0) {
       const html = forecastData.map((data) => {
@@ -45,7 +60,7 @@ export default function Forecast() {
         const { daily_chance_of_snow, daily_will_it_snow, totalsnow_cm } = day;
         const totalSnowIn = Math.round(((totalsnow_cm / 2.54) * 100) / 100);
         const dateVal = handleDate(date);
-        const { dayName, dayNum } = dateVal
+        const { dayName, dayNum } = dateVal;
         const shortDayName = dayName.slice(0, 3);
 
         return (
@@ -74,7 +89,15 @@ export default function Forecast() {
   function handleDate(date) {
     const dateObj = new Date(date);
     const weekDayNum = dateObj.getDay() < 6 ? dateObj.getDay() + 1 : 0;
-    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const days = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
     const num = dateObj.getUTCDate();
 
     return {
@@ -124,7 +147,6 @@ export default function Forecast() {
         const { text, icon, code } = condition;
         const dateVal = handleDate(date);
 
-
         return (
           <div className={styles.forecastBackground}>
             <span
@@ -164,10 +186,24 @@ export default function Forecast() {
     return { html };
   }
 
+  
+
   return (
     <>
       <div className={styles.forecastContainer}>
-        <h3 className={styles.mtnName}>{locationData.name}</h3>
+        <span className={styles.mtnName}>
+          {locationData.name}
+          <span className={styles.backdrop}>
+            <span className={styles.lightDark} style={stylesRotate}></span>
+          </span>
+          <TbSunMoon
+            size=".8em"
+            onClick={toggleDarkMode}
+            style={stylesRotate}
+            className={styles.lightDarkIcon}
+          />
+        </span>
+
         {showFullForecast && <ForecastDetails />}
         <div className={styles.previewWrapper}>{forecastPreview()}</div>
       </div>
