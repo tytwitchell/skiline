@@ -28,40 +28,44 @@
   grid-column: 1 / -1;
   background-image: url("../../assets/whitemtnsbg1.jpg");
   background-position: 50% 58%;
-  background-color: hsla(213, 6%, 32%, 0.25);
+  background-color: hsla(0, 0%, 4%);
   background-blend-mode: difference;
   /* color: hsl(180 1% 77%); */
   background-size: cover;
-  border-image: linear-gradient(
-      160deg,
-      hsl(202, 100%, 11%, 0.1),
-      hsla(213, 97%, 14%, 0.5)
-    )
-    1;
-  border-style: solid;
-  border-width: 1px;
+  border: 1px solid hsl(0 0% 88% / 0.25);
+  box-shadow: 0 1px inset hsl(0 0% 100% / 0.5),
+    0 -10px 20px 10px hsl(0 0% 100% / 0.5) inset,
+    0 10px 20px 10px hsl(0 0% 80% / 0.2) inset, 0 1px hsl(0 0% 98% / 0.75);
   letter-spacing: var(--letterSpacing);
-  opacity: 0.8;
-  padding: .75rem;
+  /* opacity: 0.8; */
+  padding: 0.75rem;
   border-radius: 8px;
-  color: var(--color-transparent)
+  color: var(--color-transparent);
 }
 
 .forecastPreview {
   display: grid;
   justify-items: center;
-  padding: 0.5rem 1.5rem;
+  padding: 0.55rem 1.55rem;
   border-radius: 8px;
+  box-shadow: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .forecastPreview:hover,
 .forecastPreview:focus {
   cursor: pointer;
-  background-color: hsl(0 0% 90% / 0.8);
+  padding: 0.5rem 1.52rem;
+  /* background-color: hsla(0, 0%, 8%); */
+  background-color: hsla(0, 0%, 93%, 0.8);
+
+  box-shadow: 0 2px inset hsl(0 0% 98%),
+    0 -10px 20px 10px hsl(0 0% 96% / 0.5) inset,
+    0 10px 20px 10px hsl(0 0% 78% / 0.2) inset, 0 2px hsl(0 0% 96%);
 }
 
 .forecastPreview:active {
-  box-shadow: inset 3px 3px 10px -3px hsl(0 0% 80%);
+  box-shadow: inset 3px 3px 10px -3px hsl(0 0% 78%);
 }
 
 .dateName {
@@ -85,40 +89,80 @@
 }
 
 .forecastBackground {
+  margin-top: -10px;
   position: relative;
-  background-image: url("../../assets/whitemtnsbg1.jpg");
-  background-position: 50% 58%;
-  background-color: hsla(213, 6%, 32%, 0.595);
-  background-blend-mode: difference;
-  background-size: cover;
+  /* background-image: url("../../assets/whitemtnsbg1.jpg"); */
+  /* background-position: 50% 58%; */
+
+  border-radius: 10px;
+  /* background-blend-mode: difference;
+  background-size: cover; */
   /* background-image: url("../../assets/cloudy.jpg");
   background-color: hsl(0 0% 90%); */
-  background-size: cover;
-  background-repeat: no-repeat;
-  
+  /* background-size: cover;
+  background-repeat: no-repeat; */
+  z-index: -1;
+  inset: 0.5rem;
 }
 
-.backdrop {
-  backdrop-filter: blur(2px);
+.action {
+  border: none;
+  position: absolute;
+  aspect-ratio: 1;
+  /* background-image: url("../../assets/whitemtnsbg1.jpg");
+  background-position: 50% 15%;
+  background-blend-mode: difference;
+  background-size: cover; */
+  background-color: hsla(0, 0%, 93%, 0.8);
+
+  box-shadow: 0 2px inset hsl(0 0% 98%),
+    0 -10px 20px 10px hsl(0 0% 96% / 0.5) inset,
+    0 10px 20px 10px hsl(0 0% 78% / 0.2) inset, 0 2px hsl(0 0% 96%);
+
+  /* background: linear-gradient(transparent 50%, hsl(0 0% 70% / 0.5)),
+    hsl(0 0% 98% / .85);
+  border: 1px solid hsl(0 0% 88% / 0.25);
+  box-shadow: 0 1px inset hsl(0 0% 100% / 0.5),
+    0 -10px 20px 10px hsl(0 0% 100% / 0.5) inset,
+    0 10px 20px 10px hsl(0 0% 80% / 0.20) inset, 0 1px hsl(0 0% 98% / 0.75);*/
+
+  border-radius: 25px;
+  
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+  filter: blur(2px);
+  transition: opacity 1s ease, filter 1s ease, height 1s ease, width 1s ease;
+  z-index: -1;
 }
+
+/* .show-second-action {
+  opacity: 1;
+  filter: blur(0px);
+  height: 100%;
+  width: 100%;
+  transition: opacity 1s ease, filter 1s ease, height 1s ease, width 1s ease;
+
+} */
 
 .forecastDetailWrapper {
-  background-color: hsla(0, 0%, 95%, 0.8);
-  border-image: linear-gradient(
+  /* background-color: hsla(0, 0%, 95%, 0.8); */
+  /* border-image: linear-gradient(
       160deg,
       hsl(202, 100%, 11%, 0.1),
       hsla(213, 97%, 14%, 0.5)
     )
-    1;
-  border-style: solid;
-  border-width: 1px;
+    1; */
+  border: 1px solid hsl(0 0% 95%);
+  border-radius: 25px;
   display: grid;
   grid-template-columns: auto auto;
   justify-content: space-around;
   gap: 1.5rem;
-  padding: .75rem;
+  padding: 0.75rem;
   color: var(--color-transparent);
-  font-weight: 600
+  font-weight: 600;
+  z-index: 1;
 }
 
 .forecastDetailWrapper > img {
@@ -141,7 +185,7 @@
 }
 
 .tempContainer {
-  grid-row: 1/-1;
+  grid-row: 1 / -1;
   grid-column: 2;
   display: flex;
   flex-direction: column;

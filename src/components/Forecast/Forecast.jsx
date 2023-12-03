@@ -142,46 +142,37 @@ export default function Forecast() {
         } = day;
         const totalSnowIn = Math.round(((totalsnow_cm / 2.54) * 100) / 100);
         const { text, icon, code } = condition;
-        console.log(text);
-
-        const backgroundStyle = () => {
-          if (text === "Partly cloudy") {
-            return `url("../../assets/partly-cloudy.jpg")`
-          } else if (text === "Sunny") {
-            return `url("../../assets/sunny2.jpg")`;
-          } else {
-            return `url("../../assets/rain.jpg")`;
-          }
-        };
 
         return (
-          <div
-            className={styles.forecastBackground}
-            // style={{ backgroundImage: 'url("../../assets/sunny2.jpg")' }}
-          >
-            <div className={styles.backdrop}>
-              <div className={styles.forecastDetailWrapper}>
-                <img src={icon} />
-                <div className={styles.snowDetail}>
-                  <BsSnow2 />
-                  {totalSnowIn}
-                  <span className={styles.label}>in</span>
-                </div>
-                <div className={styles.tempContainer}>
-                  <span className={styles.tempWrapper}>
-                    <span>Max</span>
-                    {maxtemp_f}°
-                  </span>
-                  <span className={styles.tempWrapper}>
-                    <span>Avg</span>
-                    {avgtemp_f}°
-                  </span>
-                  <span className={styles.tempWrapper}>
-                    <span>Min</span>
-                    {mintemp_f}°
-                  </span>
-                </div>
+          <div className={styles.forecastBackground}>
+            {/* <div className={styles.backdrop}> */}
+            <span
+              className={`${styles.action} ${
+                showFullForecast ? styles.showSecondAction : ""
+              }`}
+            ></span>
+            <div className={styles.forecastDetailWrapper}>
+              <img src={icon} />
+              <div className={styles.snowDetail}>
+                <BsSnow2 />
+                {totalSnowIn}
+                <span className={styles.label}>in</span>
               </div>
+              <div className={styles.tempContainer}>
+                <span className={styles.tempWrapper}>
+                  <span>Max</span>
+                  {maxtemp_f}°
+                </span>
+                <span className={styles.tempWrapper}>
+                  <span>Avg</span>
+                  {avgtemp_f}°
+                </span>
+                <span className={styles.tempWrapper}>
+                  <span>Min</span>
+                  {mintemp_f}°
+                </span>
+              </div>
+              {/* </div> */}
             </div>
           </div>
         );
