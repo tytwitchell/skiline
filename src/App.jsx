@@ -5,13 +5,8 @@ import Forecast from "./components/Forecast/Forecast";
 import Footer from "./components/Footer/Footer";
 
 /**
- * 1) make a component that shows search results (exact mountain and
- * other relative mountains in the state)
- * 2) display a forcast for the mountains weather results including:
- *   a) snow fall
- *   b) temp
- *   c) preciptation
- *   d) forcast for sun or precip / clouds etc.
+ * 1) logic for search
+ * 2) dark mode
  * 3) brainstorm next feat to add
  */
 
