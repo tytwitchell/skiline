@@ -5,7 +5,11 @@ import { GiMountains } from "react-icons/gi";
 export default function Footer() {
   return (
     <footer>
-      <GiMountains className={styles.logo} size="1.5rem" color="hsl(0 0% 100%)" />
+      <GiMountains
+        className={styles.logo}
+        size="1.5rem"
+        color="hsl(0 0% 4% / .4)"
+      />
       <p>
         Powered by <span>Snow</span>
       </p>

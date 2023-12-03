@@ -112,6 +112,11 @@ export default function Forecast() {
 
   // console.log(fullForecastData);
   //
+  function avgtemp(temp) {
+    const avg = Math.floor(temp);
+    return avg;
+  }
+
   function ForecastDetails() {
     /**
      * connect id with click event and render appropriate data
@@ -141,6 +146,9 @@ export default function Forecast() {
           totalsnow_cm,
         } = day;
         const totalSnowIn = Math.round(((totalsnow_cm / 2.54) * 100) / 100);
+
+        
+        
         const { text, icon, code } = condition;
 
         return (
@@ -161,15 +169,15 @@ export default function Forecast() {
               <div className={styles.tempContainer}>
                 <span className={styles.tempWrapper}>
                   <span>Max</span>
-                  {maxtemp_f}°
+                  {avgtemp(maxtemp_f)}°
                 </span>
                 <span className={styles.tempWrapper}>
                   <span>Avg</span>
-                  {avgtemp_f}°
+                  {avgtemp(avgtemp_f)}°
                 </span>
                 <span className={styles.tempWrapper}>
                   <span>Min</span>
-                  {mintemp_f}°
+                  {avgtemp(mintemp_f)}°
                 </span>
               </div>
               {/* </div> */}
