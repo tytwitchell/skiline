@@ -68,7 +68,7 @@
   box-shadow: inset 3px 3px 10px -3px hsl(0 0% 78%);
 }
 
-.dateName {
+.shortDateName {
   font-weight: 600;
   font-size: 0.85em;
   color: hsl(0 0% 35% / 0.8);
@@ -146,15 +146,23 @@
   z-index: 1;
 }
 
+.dateName {
+  grid-row: 1;
+  grid-column: 1;
+  font-weight: 600;
+  color: hsla(52, 25%, 25%, 0.75);
+}
+
 .forecastDetailWrapper > img {
   grid-row: 1;
   grid-column: 1;
+  align-self: center;
 }
 
 .snowDetail {
   grid-row: 1;
   grid-column: 1;
-  align-self: center;
+  align-self: last baseline;
 }
 
 .detailWrapper,
@@ -195,3 +203,45 @@
   margin-left: -0.3rem;
 }
 
+@media (max-width: 550px) {
+  .forecastContainer {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(2, auto);
+    max-width: 450px;
+  }
+
+  .previewWrapper {
+    grid-row: 2;
+    grid-column: 1;
+  }
+
+  .forecastDetailWrapper {
+    border: 1px solid hsl(0 0% 95%);
+    border-radius: 25px;
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+
+  .forecastDetailWrapper > img {
+    grid-row: 2;
+    grid-column: 1;
+    align-self: center;
+    margin-right: -5rem;
+  }
+
+  .snowDetail {
+    grid-row: 2;
+    grid-column: 2;
+    align-self: center;
+    margin-left: -5rem;
+  }
+
+  .tempContainer {
+    grid-row: 3;
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: row;
+    min-width: 100%;
+  }
+}

@@ -45,6 +45,8 @@ export default function Forecast() {
         const { daily_chance_of_snow, daily_will_it_snow, totalsnow_cm } = day;
         const totalSnowIn = Math.round(((totalsnow_cm / 2.54) * 100) / 100);
         const dateVal = handleDate(date);
+        const { dayName, dayNum } = dateVal
+        const shortDayName = dayName.slice(0, 3);
 
         return (
           <div
@@ -53,8 +55,8 @@ export default function Forecast() {
             id={id}
             className={styles.forecastPreview}
           >
-            <span className={styles.dateName}>{dateVal.dayName}</span>
-            <span className={styles.dateNum}>{dateVal.dayNum}</span>
+            <span className={styles.shortDateName}>{shortDayName}</span>
+            <span className={styles.dateNum}>{dayNum}</span>
             <p className={styles.totalSnow}>
               {totalSnowIn}
               <span className={styles.label}>in</span>
@@ -72,7 +74,7 @@ export default function Forecast() {
   function handleDate(date) {
     const dateObj = new Date(date);
     const weekDayNum = dateObj.getDay() < 6 ? dateObj.getDay() + 1 : 0;
-    const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     const num = dateObj.getUTCDate();
 
     return {
@@ -100,43 +102,16 @@ export default function Forecast() {
     }
   }
 
-  // useEffect(() => {
-  //   if (fullForecastId && targetId) {
-  //     console.log(fullForecastId, targetId);
-
-  //    fullForecastId === targetId
-  //      ?  setShowFullForecast(false)
-  //      :  setShowFullForecast(true);
-  //   }
-  // }, [targetId]);
-
-  // console.log(fullForecastData);
-  //
   function avgtemp(temp) {
     const avg = Math.floor(temp);
     return avg;
   }
 
   function ForecastDetails() {
-    /**
-     * connect id with click event and render appropriate data
-     *   a) snow fall
-     *   b) temp
-     *   c) preciptation
-     *   d) forcast for sun or preci4p / clouds etc.
-     * condition:
-     *  code: 1009
-     *  icon: "//cdn.weatherapi.com/weather/64x64/day/122.png"
-     *  text: "Overcast"
-     * maxtemp_f
-     * avgtemp_f
-     * mintemp_f
-     * totalprecip_in
-     */
     if (showFullForecast && fullForecastData) {
       console.log(fullForecastData);
       const html = fullForecastData.map((data) => {
-        const { day } = data;
+        const { day, date } = data;
         const {
           condition,
           maxtemp_f,
@@ -146,20 +121,19 @@ export default function Forecast() {
           totalsnow_cm,
         } = day;
         const totalSnowIn = Math.round(((totalsnow_cm / 2.54) * 100) / 100);
-
-        
-        
         const { text, icon, code } = condition;
+        const dateVal = handleDate(date);
+
 
         return (
           <div className={styles.forecastBackground}>
-            {/* <div className={styles.backdrop}> */}
             <span
               className={`${styles.action} ${
                 showFullForecast ? styles.showSecondAction : ""
               }`}
             ></span>
             <div className={styles.forecastDetailWrapper}>
+              <span className={styles.dateName}>{dateVal.dayName}</span>
               <img src={icon} />
               <div className={styles.snowDetail}>
                 <BsSnow2 />
