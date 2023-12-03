@@ -58,8 +58,7 @@
   position: absolute;
   right: 0;
   height: 1.5em;
-  background:
-    linear-gradient(transparent 50%, hsl(0 0% 70% / 0.5)),
+  background: linear-gradient(transparent 50%, hsl(0 0% 70% / 0.5)),
     hsl(0 0% 95%);
   box-shadow: 0 -1px inset hsl(0 0% 0% / 0.35);
   width: 1.5em;
@@ -70,14 +69,14 @@
 
 .lightDarkIcon {
   z-index: 1;
-  margin-right: .3em;
-  color:hsl(0 0% 25%);
-  opacity: .95;
+  margin-right: 0.3em;
+  color: hsl(0 0% 25%);
+  opacity: 0.95;
   cursor: pointer;
 }
 
-
-.forecastPreview {
+.forecastPreview,
+.forecastPreviewDark {
   display: grid;
   justify-items: center;
   padding: 0.55rem 1.55rem;
@@ -92,27 +91,40 @@
   padding: 0.5rem 1.53rem;
   /* background-color: hsla(0, 0%, 8%); */
   background-color: hsla(0, 0%, 93%, 0.8);
-
+  border: hsla(0, 0%, 7%, 0.8);
   box-shadow: 0 2px inset hsl(0 0% 98%),
     0 -10px 20px 10px hsl(0 0% 96% / 0.5) inset,
     0 10px 20px 10px hsl(0 0% 78% / 0.2) inset, 0 2px hsl(0 0% 96%);
 }
-
 .forecastPreview:active {
   box-shadow: inset 3px 3px 10px -3px hsl(0 0% 78%);
+}
+
+.forecastPreviewDark:hover,
+.forecastPreviewDark:focus {
+  cursor: pointer;
+  padding: 0.5rem 1.53rem;
+  background-color: hsla(0, 0%, 7%, 0.8);
+  border: hsla(0, 0%, 7%, 0.8);
+
+  box-shadow: 0 1px inset hsl(0 0% 100% / 0.5),
+    0 -10px 20px 10px hsl(0 0% 0% / 0.5) inset,
+    0 10px 20px 10px hsl(0 0% 50% / 0.25) inset, 0 1px hsl(0 0% 2% / 0.75);
+}
+
+.forecastPreviewDark:active {
+  box-shadow: inset 3px 3px 10px -3px hsl(0 0% 22%);
 }
 
 .shortDateName {
   font-weight: 600;
   font-size: 0.85em;
-  color: hsl(0 0% 35% / 0.8);
   margin: 0;
 }
 
 .dateNum {
   font-weight: 600;
   font-size: 0.85em;
-  color: hsl(0 0% 4% / 0.8);
   margin: 0;
 }
 
@@ -144,31 +156,19 @@
   position: absolute;
   aspect-ratio: 1;
   background-color: hsla(0, 0%, 93%, 0.8);
-
   box-shadow: 0 2px inset hsl(0 0% 98%),
     0 -10px 20px 10px hsl(0 0% 96% / 0.5) inset,
     0 10px 20px 10px hsl(0 0% 78% / 0.2) inset, 0 2px hsl(0 0% 96%);
   border-radius: 25px;
-
   height: 100%;
   width: 100%;
   opacity: 1;
   filter: blur(2px);
-  transition: opacity 1s ease, filter 1s ease, height 1s ease, width 1s ease;
   z-index: -1;
 }
 
-/* .show-second-action {
-  opacity: 1;
-  filter: blur(0px);
-  height: 100%;
-  width: 100%;
-  transition: opacity 1s ease, filter 1s ease, height 1s ease, width 1s ease;
-
-} */
-
 .forecastDetailWrapper {
-  border: 1px solid hsl(0 0% 95%);
+  /* border: 1px solid hsl(0 0% 95%); */
   border-radius: 25px;
   display: grid;
   grid-template-columns: auto auto;

@@ -48,9 +48,30 @@ export default function Forecast() {
     transition: "transform 0.5s ease",
   };
 
-  const stylesDarkMode = {
-    backgroundColor: darkMode ? "hsl(0 0% 5% )" : "hsl(0 0% 90%)",
-    transition: "background-color .5s ease",
+  const stylesDateColor = {
+    color: darkMode ? "hsl(0 0% 70% / 0.8)" : "hsl(0 0% 35% / 0.8)",
+    transition: "color .5s ease",
+  };
+
+  const stylesTextColor = {
+    color: darkMode ? "hsl(0 0% 100% / 0.98)" : "hsl(0 0% 4% / 0.8)",
+    transition: "color .5s ease",
+  };
+
+  const actionDark = {
+    backgroundColor: darkMode
+      ? "hsla(0, 0%, 7%, 0.8)"
+      : "hsla(0, 0%, 93%, 0.8)",
+    boxShadow: darkMode
+      ? "0 1px inset hsl(0 0% 100% / 0.5), 0 -10px 20px 10px hsl(0 0% 0% / 0.5) inset,0 10px 20px 10px hsl(0 0% 50% / 0.25) inset,0 1px hsl(0 0% 2% / 0.75)"
+      : "0 2px inset hsl(0 0% 98%), 0 -10px 20px 10px hsl(0 0% 96% / 0.5) inset, 0 10px 20px 10px hsl(0 0% 78% / 0.2) inset, 0 2px hsl(0 0% 96%)",
+    transition: "backgroundColor .5s ease boxShadow .5s ease",
+  };
+
+  const stylesBorder = {
+    border: darkMode
+      ? "1px solid hsl(0 0% 100% / 0.25)"
+      : "1px solid hsl(0 0% 95%)",
   };
 
   function forecastPreview() {
@@ -68,13 +89,21 @@ export default function Forecast() {
             onClick={(e) => handleForecastClick(e)}
             key={id}
             id={id}
-            className={styles.forecastPreview}
+            className={`${styles.forecastPreview} ${
+              darkMode ? styles.forecastPreviewDark : ""
+            }`}
           >
-            <span className={styles.shortDateName}>{shortDayName}</span>
-            <span className={styles.dateNum}>{dayNum}</span>
-            <p className={styles.totalSnow}>
+            <span className={styles.shortDateName} style={stylesDateColor}>
+              {shortDayName}
+            </span>
+            <span className={styles.dateNum} style={stylesTextColor}>
+              {dayNum}
+            </span>
+            <p className={styles.totalSnow} style={stylesTextColor}>
               {totalSnowIn}
-              <span className={styles.label}>in</span>
+              <span className={styles.label} style={stylesTextColor}>
+                in
+              </span>
             </p>
           </div>
         );
@@ -149,13 +178,14 @@ export default function Forecast() {
 
         return (
           <div className={styles.forecastBackground}>
-            <span
-              className={`${styles.action} ${
-                showFullForecast ? styles.showSecondAction : ""
-              }`}
-            ></span>
-            <div className={styles.forecastDetailWrapper}>
-              <span className={styles.dateName}>{dateVal.dayName}</span>
+            <span className={styles.action} style={actionDark}></span>
+            <div
+              className={styles.forecastDetailWrapper}
+              style={(stylesBorder, stylesTextColor)}
+            >
+              <span className={styles.dateName} style={stylesDateColor}>
+                {dateVal.dayName}
+              </span>
               <img src={icon} />
               <div className={styles.snowDetail}>
                 <BsSnow2 />
@@ -185,8 +215,6 @@ export default function Forecast() {
     }
     return { html };
   }
-
-  
 
   return (
     <>
