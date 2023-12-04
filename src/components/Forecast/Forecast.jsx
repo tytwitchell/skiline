@@ -45,17 +45,17 @@ export default function Forecast() {
 
   const stylesRotate = {
     transform: darkMode ? "rotate(180deg)" : "none",
-    transition: "transform 0.5s ease",
+    transition: "transform 1s ease",
   };
 
   const stylesDateColor = {
     color: darkMode ? "hsl(0 0% 75% / 0.8)" : "hsl(0 0% 35% / 0.8)",
-    transition: "color .5s ease",
+    transition: "color 2s ease",
   };
 
   const stylesTextColor = {
     color: darkMode ? "hsl(0 0% 93% / 0.98)" : "hsl(0 0% 4% / 0.8)",
-    transition: "color .5s ease",
+    transition: "color 2s ease",
   };
 
   const stylesForecast = {
@@ -71,19 +71,19 @@ export default function Forecast() {
           0 -10px 20px 10px hsl(0 0% 96% / 0.5) inset, 
           0 10px 20px 10px hsl(0 0% 78% / 0.2) inset, 
           0 2px hsl(0 0% 96%)`,
-    transition: "backgroundColor .5s ease boxShadow .5s ease",
+    transition: "backgroundColor 2s ease boxShadow 2s ease",
   };
 
   const stylesBorder = {
     border: darkMode
       ? "1px solid hsl(0 0% 100% / 0.25)"
       : "1px solid hsl(0 0% 95%)",
-    transition: "border .5s ease",
+    transition: "border 2s ease",
   };
 
   const stylesMtnName = {
     color: darkMode ? "hsl(0 0% 98% / 0.925)" : "hsl(0 0% 4% / 0.8)",
-    backgroundColor: darkMode ? "hsla(20, 15%, 85%)" : "hsla(15, 20%, 6%)",
+    backgroundColor: darkMode ? "hsla(20, 15%, 85%)" : "hsla(20, 25%, 6%)",
     boxShadow: darkMode
       ? `0 1px inset hsl(0 0% 100% / 0.5), 
           0 -10px 20px 10px hsl(200 20% 15% / 0.5) inset,
@@ -93,7 +93,7 @@ export default function Forecast() {
           0 -10px 20px 10px hsl(15 20% 95% / 0.5) inset,
           0 10px 20px 10px hsl(15 20% 80% / 0.2) inset, 
           0 1px hsl(0 0% 98% / 0.75)`,
-    transition: "backgroundColor .5s ease boxShadow .5s ease color .5s ease",
+    transition: "backgroundColor 2s ease boxShadow 2s ease color 2s ease",
   };
 
   const stylesLightDarkEl = {
@@ -105,7 +105,7 @@ export default function Forecast() {
     border: darkMode
       ? "1px solid hsl(0 0% 100% / 0.1)"
       : "1px solid hsl(0 0% 95% / .1)",
-    transition: "background 0.5s ease boxShadow 0.5s ease transform 0.5s ease",
+    transition: "background 2s ease boxShadow 2s ease transform 2s ease",
   };
 
   function forecastPreview() {
@@ -195,7 +195,7 @@ export default function Forecast() {
 
   function ForecastDetails() {
     if (showFullForecast && fullForecastData) {
-      console.log(fullForecastData);
+
       const html = fullForecastData.map((data) => {
         const { day, date } = data;
         const {

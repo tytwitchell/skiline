@@ -29,16 +29,50 @@ h1 {
   margin: 0;
 }
 
-nav > input {
-  border: none;
-  padding: 0.5rem;
-  outline: none;
-  border-radius: 5px;
-  background: linear-gradient(hsla(180, 2%, 97%), hsl(180, 2%, 87%, 0.8));
+.searchWrapper {
   color: hsl(0 0% 10%);
   font-family: "Geist Sans", sans-serif;
   font-size: .9rem;
   letter-spacing: 0.1ch;
   margin-left: auto;
   min-width: 30%;
+  position:relative
+}
+
+.searchBar {
+  border: none;
+  padding: 0.5rem;
+  outline: none;
+  border-radius: 5px;
+  background: linear-gradient(hsla(180, 2%, 97%), hsl(180, 2%, 87%, 0.8));
+  width: 100%
+}
+
+.resultsList {
+  position: absolute;
+  top: 38px;
+  display: flex;
+  flex-direction: column;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background: linear-gradient(hsla(180, 2%, 95%), hsl(180, 2%, 85%, .85));
+  width: 100%;
+  max-height: 300px;
+  box-shadow: 1px 1px 8px hsla(0, 0%, 50%, .8);
+  font-size: .75rem;
+  overflow-y: scroll;
+  z-index: 1
+}
+
+.result {
+  padding: .5rem;
+  transition: box-shadow .2s ease
+}
+
+.result:hover,
+.result:focus {
+  cursor: pointer;
+  background: linear-gradient(90deg,hsl(0 0% 82%), transparent);
+  box-shadow: inset 1px 1px 8px -5px hsl(0 0% 30%)
 }

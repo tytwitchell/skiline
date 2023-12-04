@@ -15,9 +15,11 @@ export { AppContext };
 
 export default function App() {
   const [data, setData] = useState({});
-  const [darkMode, setDarkMode] = useState(false)
+  const [darkMode, setDarkMode] = useState(false);
+
 
   useEffect(() => {
+  
     const fetchData = async () => {
       try {
         const response = await fetch(
@@ -42,18 +44,18 @@ export default function App() {
     fetchData();
   }, []);
 
-  
-
   console.log("data in app", data);
 
   const stylesDarkBgColor = {
-    backgroundColor: darkMode ? "hsl(0 0% 5% )" : "hsl(200 20% 85%)",
+    backgroundColor: darkMode ? "hsl(200 30% 8% )" : "hsl(200 20% 85%)",
     transition: "background-color .5s ease",
-  }
-  
+  };
+
   return (
-    <AppContext.Provider value={{ data, darkMode, setDarkMode }}>
-      <span class="background-main" ></span>
+    <AppContext.Provider
+      value={{ data, darkMode, setDarkMode }}
+    >
+      <span class="background-main"></span>
       <span class="background-texture" style={stylesDarkBgColor}></span>
       <Header />
       <Forecast />
