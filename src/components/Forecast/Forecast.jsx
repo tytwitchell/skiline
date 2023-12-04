@@ -54,13 +54,13 @@ export default function Forecast() {
   };
 
   const stylesTextColor = {
-    color: darkMode ? "hsl(0 0% 100% / 0.98)" : "hsl(0 0% 4% / 0.8)",
+    color: darkMode ? "hsl(0 0% 93% / 0.98)" : "hsl(0 0% 4% / 0.8)",
     transition: "color .5s ease",
   };
 
   const stylesForecast = {
     backgroundColor: darkMode
-      ? "hsla(200, 15%, 8%, 0.8)"
+      ? "hsla(200, 15%, 10%, 0.8)"
       : "hsla(200, 30%, 93%, 0.8)",
     boxShadow: darkMode
       ? `0 1px inset hsl(0 0% 100% / 0.5),
@@ -83,10 +83,10 @@ export default function Forecast() {
 
   const stylesMtnName = {
     color: darkMode ? "hsl(0 0% 98% / 0.925)" : "hsl(0 0% 4% / 0.8)",
-    backgroundColor: darkMode ? "hsla(20, 20%, 87%)" : "hsla(15, 20%, 6%)",
+    backgroundColor: darkMode ? "hsla(20, 15%, 85%)" : "hsla(15, 20%, 6%)",
     boxShadow: darkMode
       ? `0 1px inset hsl(0 0% 100% / 0.5), 
-          0 -10px 20px 10px hsl(0 0% 0% / 0.5) inset,
+          0 -10px 20px 10px hsl(200 20% 15% / 0.5) inset,
           0 10px 20px 10px hsl(0 0% 50% / 0.25) inset,
           0 1px hsl(0 0% 2% / 0.75)`
       : `0 1px inset hsl(0 0% 100% / 0.5),
