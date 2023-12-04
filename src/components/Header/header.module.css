@@ -1,12 +1,6 @@
 header {
   padding: .5rem;
   
-  /* background-position: 75% 40%;
-  background-size: cover;
-  background-image: url(../../assets/whitemtnsbg2.jpg);
-  background-color: hsl(213 100% 22% / .9);
-  background-blend-mode: difference; */
-  /* box-shadow: inset 0px -15px 15px -3px hsl(213 100% 4%); */
 }
 
 nav {
@@ -19,11 +13,10 @@ nav {
   background-position: 70% 63%;
   background-size: cover;
   background-image: url(../../assets/whitemtnsbg2.jpg);
-  background-color: hsla(212, 5%, 48%, 0.45);
+  background-color: hsla(212, 5%, 30%, 0.45);
   background-blend-mode: difference;
   color: hsl(180 1% 77%);
   box-shadow: 3px 3px 15px 0px hsl(213 100% 4%);
-  /* box-shadow: inset -10px -5px 20px -3px hsl(213 100% 4%); */
 }
 
 h1 {

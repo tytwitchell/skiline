@@ -49,7 +49,7 @@ export default function Forecast() {
   };
 
   const stylesDateColor = {
-    color: darkMode ? "hsl(0 0% 70% / 0.8)" : "hsl(0 0% 35% / 0.8)",
+    color: darkMode ? "hsl(0 0% 75% / 0.8)" : "hsl(0 0% 35% / 0.8)",
     transition: "color .5s ease",
   };
 
@@ -58,13 +58,19 @@ export default function Forecast() {
     transition: "color .5s ease",
   };
 
-  const actionDark = {
+  const stylesForecast = {
     backgroundColor: darkMode
-      ? "hsla(0, 0%, 7%, 0.8)"
-      : "hsla(0, 0%, 93%, 0.8)",
+      ? "hsla(200, 15%, 8%, 0.8)"
+      : "hsla(200, 30%, 93%, 0.8)",
     boxShadow: darkMode
-      ? "0 1px inset hsl(0 0% 100% / 0.5), 0 -10px 20px 10px hsl(0 0% 0% / 0.5) inset,0 10px 20px 10px hsl(0 0% 50% / 0.25) inset,0 1px hsl(0 0% 2% / 0.75)"
-      : "0 2px inset hsl(0 0% 98%), 0 -10px 20px 10px hsl(0 0% 96% / 0.5) inset, 0 10px 20px 10px hsl(0 0% 78% / 0.2) inset, 0 2px hsl(0 0% 96%)",
+      ? `0 1px inset hsl(0 0% 100% / 0.5),
+          0 -10px 20px 10px hsl(0 0% 0% / 0.5) inset,
+          0 10px 20px 10px hsl(0 0% 50% / 0.25) inset,
+          0 1px hsl(0 0% 2% / 0.75)`
+      : `0 2px inset hsl(0 0% 98%),
+          0 -10px 20px 10px hsl(0 0% 96% / 0.5) inset, 
+          0 10px 20px 10px hsl(0 0% 78% / 0.2) inset, 
+          0 2px hsl(0 0% 96%)`,
     transition: "backgroundColor .5s ease boxShadow .5s ease",
   };
 
@@ -72,6 +78,34 @@ export default function Forecast() {
     border: darkMode
       ? "1px solid hsl(0 0% 100% / 0.25)"
       : "1px solid hsl(0 0% 95%)",
+    transition: "border .5s ease",
+  };
+
+  const stylesMtnName = {
+    color: darkMode ? "hsl(0 0% 98% / 0.925)" : "hsl(0 0% 4% / 0.8)",
+    backgroundColor: darkMode ? "hsla(20, 20%, 87%)" : "hsla(15, 20%, 6%)",
+    boxShadow: darkMode
+      ? `0 1px inset hsl(0 0% 100% / 0.5), 
+          0 -10px 20px 10px hsl(0 0% 0% / 0.5) inset,
+          0 10px 20px 10px hsl(0 0% 50% / 0.25) inset,
+          0 1px hsl(0 0% 2% / 0.75)`
+      : `0 1px inset hsl(0 0% 100% / 0.5),
+          0 -10px 20px 10px hsl(15 20% 95% / 0.5) inset,
+          0 10px 20px 10px hsl(15 20% 80% / 0.2) inset, 
+          0 1px hsl(0 0% 98% / 0.75)`,
+    transition: "backgroundColor .5s ease boxShadow .5s ease color .5s ease",
+  };
+
+  const stylesLightDarkEl = {
+    background: darkMode
+      ? "linear-gradient(transparent 50%, hsl(0 0% 30% / 0.5)), hsl(0 0% 0%)"
+      : "linear-gradient(transparent 50%, hsl(0 0% 70% / 0.5)), hsl(0 0% 95%)",
+    boxShadow: "0 -1px inset hsl(0 0% 0% / 0.35)",
+    transform: darkMode ? "rotate(180deg)" : "none",
+    border: darkMode
+      ? "1px solid hsl(0 0% 100% / 0.1)"
+      : "1px solid hsl(0 0% 95% / .1)",
+    transition: "background 0.5s ease boxShadow 0.5s ease transform 0.5s ease",
   };
 
   function forecastPreview() {
@@ -178,7 +212,7 @@ export default function Forecast() {
 
         return (
           <div className={styles.forecastBackground}>
-            <span className={styles.action} style={actionDark}></span>
+            <span className={styles.forecast} style={stylesForecast}></span>
             <div
               className={styles.forecastDetailWrapper}
               style={(stylesBorder, stylesTextColor)}
@@ -219,10 +253,10 @@ export default function Forecast() {
   return (
     <>
       <div className={styles.forecastContainer}>
-        <span className={styles.mtnName}>
+        <span className={styles.mtnName} style={stylesMtnName}>
           {locationData.name}
           <span className={styles.backdrop}>
-            <span className={styles.lightDark} style={stylesRotate}></span>
+            <span className={styles.lightDark} style={stylesLightDarkEl}></span>
           </span>
           <TbSunMoon
             size=".8em"
