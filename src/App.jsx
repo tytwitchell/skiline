@@ -21,7 +21,7 @@ export default function App() {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://api.weatherapi.com/v1/forecast.json
+          `https://api.weatherapi.com/v1/forecast.json
             ?key=7e7e986488a04a789cf233454232911
             &q=${lat + "," + lon}
             &days=3
