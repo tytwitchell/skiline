@@ -22,7 +22,7 @@ export default function Header() {
   const stylesHeader = {
     backgroundColor: darkMode
       ? "hsl(212, 5%, 38%, 0.45)"
-      : "hsla(212, 5%, 30%, 0.45)",
+      : "hsl(212, 5%, 30%, 0.45)",
     boxShadow: darkMode
       ? `
         0 1px inset hsl(0 0% 100% / 0.5),

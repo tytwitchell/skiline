@@ -51,8 +51,8 @@ export default function Forecast() {
 
   const stylesForecast = {
     backgroundColor: darkMode
-      ? "hsla(200, 15%, 10%, 0.8)"
-      : "hsla(200, 30%, 93%, 0.8)",
+      ? "hsl(200, 15%, 10%, 0.8)"
+      : "hsl(200, 30%, 93%, 0.8)",
     boxShadow: darkMode
       ? `0 1px inset hsl(0 0% 100% / 0.5),
           0 -10px 20px 10px hsl(0 0% 0% / 0.5) inset,
@@ -74,7 +74,7 @@ export default function Forecast() {
 
   const stylesMtnName = {
     color: darkMode ? "hsl(0 0% 98% / 0.925)" : "hsl(0 0% 4% / 0.8)",
-    backgroundColor: darkMode ? "hsla(20, 15%, 85%)" : "hsla(20, 25%, 6%)",
+    backgroundColor: darkMode ? "hsl(20, 15%, 85%)" : "hsl(20, 25%, 6%)",
     boxShadow: darkMode
       ? `0 1px inset hsl(0 0% 100% / 0.5), 
           0 -10px 20px 10px hsl(200 20% 15% / 0.5) inset,

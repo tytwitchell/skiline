@@ -60,9 +60,9 @@
 .forecastPreview:focus {
   cursor: pointer;
   padding: 0.5rem 1.53rem;
-  /* background-color: hsla(0, 0%, 8%); */
-  background-color: hsla(200, 30%, 93%, 0.8);
-  border: hsla(0, 0%, 7%, 0.8);
+  /* background-color: hsl(0, 0%, 8%); */
+  background-color: hsl(200, 30%, 93%, 0.8);
+  border: hsl(0, 0%, 7%, 0.8);
   box-shadow: 0 2px inset hsl(0 0% 98%),
     0 -10px 20px 10px hsl(0 0% 96% / 0.5) inset,
     0 10px 20px 10px hsl(0 0% 78% / 0.2) inset, 0 2px hsl(0 0% 96%);
@@ -75,8 +75,8 @@
 .forecastPreviewDark:focus {
   cursor: pointer;
   padding: 0.5rem 1.53rem;
-  background-color: hsla(200, 15%, 8%, 0.8);
-  border: hsla(0, 0%, 7%, 0.8);
+  background-color: hsl(200, 15%, 8%, 0.8);
+  border: hsl(0, 0%, 7%, 0.8);
   box-shadow: 0 1px inset hsl(0 0% 100% / 0.5),
     0 -10px 20px 10px hsl(0 0% 0% / 0.5) inset,
     0 10px 20px 10px hsl(0 0% 50% / 0.25) inset, 0 1px hsl(0 0% 2% / 0.75);
@@ -142,7 +142,7 @@
   grid-column: 1;
   font-weight: 600;
   font-size: 1.15rem;
-  color: hsla(52, 25%, 25%, 0.75);
+  color: hsl(52, 25%, 25%, 0.75);
 }
 
 .forecastDetailWrapper > img {
