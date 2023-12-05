@@ -13,7 +13,7 @@ export default function App() {
   const [mtnForecastData, setMtnForecastData] = useState("");
   const [clickedResult, setClickedResult] = useState(null);
   const [mtnCoordinates, setMtnCoordinates] = useState({});
-  const { lat, lon } = mtnCoordinates
+  const { lat, lon } = mtnCoordinates;
 
   // console.log(mtnForecastData, clickedResult);
 

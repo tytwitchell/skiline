@@ -42,16 +42,16 @@ export default function Header() {
       : "1px solid hsl(0 0% 95% / 0.1)",
 
     transition: `
-      background-color 2s ease 
-      box-shadow 2s ease 
-      border 2s ease
+      background-color 1s ease 
+      box-shadow 1s ease 
+      border 1s ease
     `,
   };
 
   return (
     <header>
       <nav style={stylesHeader}>
-        <GiMountains className="logo" size="3rem" color="hsl(0 0% 100%)" />
+        <GiMountains className="logo" size="2.5rem" color="hsl(0 0% 100%)" />
         <h1>Skiline</h1>
         <div className={styles.searchWrapper}>
           <SearchBar

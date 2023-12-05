@@ -1,6 +1,5 @@
 header {
   padding: .5rem;
-  
 }
 
 nav {
@@ -75,4 +74,12 @@ h1 {
   cursor: pointer;
   background: linear-gradient(90deg,hsl(0 0% 82%), transparent);
   box-shadow: inset 1px 1px 8px -5px hsl(0 0% 30%)
+}
+
+@media (max-width: 500px) {
+  h1 {
+      font-size: 1.75rem;
+  }
+
+
 }

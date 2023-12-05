@@ -1,0 +1,26 @@
+.backdrop {
+  position: absolute;
+  inset: 0.5rem;
+}
+
+.lightDark {
+  position: absolute;
+  bottom: 0%;
+  right: 35%;
+  height: 1.5rem;
+  width: 1.5rem;
+  aspect-ratio: 1;
+  border-radius: 10px;
+  transition: width var(--speed);
+}
+
+.lightDarkIcon {
+  position: absolute;
+  top: 5%;
+  height: 3rem;
+  margin-right: 0.3em;
+  opacity: 0.95;
+  cursor: pointer;
+  aspect-ratio: 1;
+  z-index: 1;
+}

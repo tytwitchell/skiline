@@ -45,16 +45,16 @@
   opacity: 0.9;
 }
 
-.backdrop {
+/* .backdrop {
   position: absolute;
-  inset: 0.5em;
+  inset: 0.5rem;
 }
 
 .lightDark {
   position: absolute;
   right: 0;
-  height: 1.5em;
-  width: 1.5em;
+  height: 1.5rem;
+  width: 1.5rem;
   aspect-ratio: 1;
   transition: width var(--speed);
   border-radius: 100px;
@@ -69,7 +69,7 @@
   cursor: pointer;
   aspect-ratio: 1;
   z-index: 1;
-}
+} */
 
 .forecastPreview,
 .forecastPreviewDark {
@@ -132,18 +132,10 @@
 .forecastBackground {
   margin-top: -10px;
   position: relative;
-  /* background-image: url("../../assets/whitemtnsbg1.jpg"); */
-  /* background-position: 50% 58%; */
-
   border-radius: 10px;
-  /* background-blend-mode: difference;
-  background-size: cover; */
-  /* background-image: url("../../assets/cloudy.jpg");
-  background-color: hsl(0 0% 90%); */
-  /* background-size: cover;
-  background-repeat: no-repeat; */
   z-index: -1;
   inset: 0.5rem;
+  width: 95%;
 }
 
 .forecast {
@@ -159,13 +151,12 @@
 }
 
 .forecastDetailWrapper {
-  /* border: 1px solid hsl(0 0% 95%); */
   border-radius: 25px;
   display: grid;
   grid-template-columns: auto auto;
   justify-content: space-around;
-  gap: 1.5rem;
-  padding: 0.75rem;
+  gap: 1rem;
+  padding: 2rem;
   color: var(--color-transparent);
   font-weight: 600;
   z-index: 1;
@@ -234,6 +225,11 @@
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(2, auto);
     max-width: 450px;
+    font-size: 20px;
+  }
+
+  .mtnName {
+    font-size: 1rem;
   }
 
   .previewWrapper {
