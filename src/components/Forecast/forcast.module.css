@@ -12,16 +12,6 @@
   font-size: 20px;
 }
 
-.previewWrapper {
-  grid-row: 2;
-  grid-column: 2;
-  align-self: first baseline;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  gap: 0.25em;
-}
 
 .mtnName {
   position: relative;
@@ -43,6 +33,17 @@
   padding: 0.75rem;
   border-radius: 8px;
   opacity: 0.9;
+}
+
+.previewWrapper {
+  grid-row: 2;
+  grid-column: 2;
+  align-self: first baseline;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 0.1em;
 }
 
 .forecastPreview,
@@ -98,7 +99,7 @@
 }
 
 .totalSnow {
-  margin-top: 1rem;
+  margin-top: .5rem;
   letter-spacing: var(--letterSpacing);
   margin-right: -0.3em;
 }
@@ -140,6 +141,7 @@
   grid-row: 1;
   grid-column: 1;
   font-weight: 600;
+  font-size: 1.15rem;
   color: hsla(52, 25%, 25%, 0.75);
 }
 
@@ -200,7 +202,7 @@
     grid-template-rows: repeat(2, auto);
     max-width: 450px;
     font-size: 20px;
-    margin-top: 0.25rem;
+    margin-top: 0rem;
   }
 
   .mtnName {
@@ -210,12 +212,14 @@
   .previewWrapper {
     grid-row: 2;
     grid-column: 1;
+    font-size: 1rem
   }
 
   .forecastDetailWrapper {
     border-radius: 25px;
     display: grid;
     grid-template-columns: auto auto;
+    font-size: 1.1rem
   }
 
   .forecastDetailWrapper > img {
@@ -238,5 +242,6 @@
     display: flex;
     flex-direction: row;
     min-width: 100%;
+    font-size: 1.1rem
   }
 }
