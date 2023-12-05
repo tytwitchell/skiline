@@ -45,32 +45,6 @@
   opacity: 0.9;
 }
 
-/* .backdrop {
-  position: absolute;
-  inset: 0.5rem;
-}
-
-.lightDark {
-  position: absolute;
-  right: 0;
-  height: 1.5rem;
-  width: 1.5rem;
-  aspect-ratio: 1;
-  transition: width var(--speed);
-  border-radius: 100px;
-}
-
-.lightDarkIcon {
-  position: absolute;
-  right: 0;
-  top: 20%;
-  margin-right: 0.3em;
-  opacity: 0.95;
-  cursor: pointer;
-  aspect-ratio: 1;
-  z-index: 1;
-} */
-
 .forecastPreview,
 .forecastPreviewDark {
   display: grid;
@@ -226,6 +200,7 @@
     grid-template-rows: repeat(2, auto);
     max-width: 450px;
     font-size: 20px;
+    margin-top: 0.25rem;
   }
 
   .mtnName {
