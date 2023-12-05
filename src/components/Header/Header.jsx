@@ -17,7 +17,6 @@ export default function Header() {
   } = useContext(AppContext);
   const [searchResults, setSearchResults] = useState(null);
   const [showResults, setShowResults] = useState(false);
-  // const [clickedResult, setClickedResult] = useState(null);
 
   const stylesHeader = {
     backgroundColor: darkMode

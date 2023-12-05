@@ -52,7 +52,7 @@ export default function Forecast() {
   const stylesForecast = {
     backgroundColor: darkMode
       ? "hsl(200, 15%, 10%, 0.8)"
-      : "hsl(200, 30%, 93%, 0.8)",
+      : "hsl(200, 30%, 91%, 0.8)",
     boxShadow: darkMode
       ? `0 1px inset hsl(0 0% 100% / 0.5),
           0 -10px 20px 10px hsl(0 0% 0% / 0.5) inset,
@@ -74,7 +74,7 @@ export default function Forecast() {
 
   const stylesMtnName = {
     color: darkMode ? "hsl(0 0% 98% / 0.925)" : "hsl(0 0% 4% / 0.8)",
-    backgroundColor: darkMode ? "hsl(20, 15%, 85%)" : "hsl(20, 25%, 6%)",
+    backgroundColor: darkMode ? "hsl(20, 15%, 85%)" : "hsl(20, 25%, 10%)",
     boxShadow: darkMode
       ? `0 1px inset hsl(0 0% 100% / 0.5), 
           0 -10px 20px 10px hsl(200 20% 15% / 0.5) inset,
@@ -84,14 +84,14 @@ export default function Forecast() {
           0 -10px 20px 10px hsl(15 20% 95% / 0.5) inset,
           0 10px 20px 10px hsl(15 20% 80% / 0.2) inset, 
           0 1px hsl(0 0% 98% / 0.75)`,
-    transition: "backgroundColor 1s ease boxShadow 1s ease color 1s ease",
+    transition: "backgroundColor 1s ease, boxShadow 1s ease, color 1s ease",
   };
 
   function forecastPreview() {
     if (forecastData && forecastData.length > 0) {
       const html = forecastData.map((data) => {
         const { id, date, day } = data;
-        const { daily_chance_of_snow, daily_will_it_snow, totalsnow_cm } = day;
+        const { totalsnow_cm } = day;
         const totalSnowIn = Math.round(((totalsnow_cm / 2.54) * 100) / 100);
         const dateVal = handleDate(date);
         const { dayName, dayNum } = dateVal;
@@ -151,19 +151,16 @@ export default function Forecast() {
   function handleForecastClick(e) {
     if (forecastData && forecastData.length > 0) {
       const targetForecast = forecastData.filter((day) => {
-        return day.id === e.target.id;
+        if (day.id === e.target.id) {
+          return day.id;
+        }
       });
+      setShowFullForecast(true);
       setFullForecastData(targetForecast);
       setTargetId(e.target.id);
       setFullForecastId(targetForecast[0].id);
     } else {
       console.error("FORECAST NOT WORKING: No forecastData available.");
-    }
-
-    if (fullForecastData) {
-      fullForecastData.id === e.target.id
-        ? setShowFullForecast(false)
-        : setShowFullForecast(true);
     }
   }
 
