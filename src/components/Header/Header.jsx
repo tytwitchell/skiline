@@ -1,10 +1,23 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { GiMountains } from "react-icons/gi";
 import styles from "./header.module.css";
+import SearchBar from "./SearchBar";
 import { AppContext } from "../../App";
+import SearchResultsList from "./SearchResultsList";
 
 export default function Header() {
-  const { darkMode } = useContext(AppContext);
+  const {
+    darkMode,
+    mtnForecastData,
+    setMtnForecastData,
+    clickedResult,
+    setClickedResult,
+    mtnCoordinates,
+    setMtnCoordinates,
+  } = useContext(AppContext);
+  const [searchResults, setSearchResults] = useState(null);
+  const [showResults, setShowResults] = useState(false);
+  // const [clickedResult, setClickedResult] = useState(null);
 
   const stylesHeader = {
     backgroundColor: darkMode
@@ -23,33 +36,41 @@ export default function Header() {
         0 10px 20px 10px hsl(0 0% 78% / 0.2) inset, 
         0 2px hsl(0 0% 96%)
       `,
-      
+
     border: darkMode
       ? "1px solid hsl(0 0% 100% / 0.1)"
       : "1px solid hsl(0 0% 95% / 0.1)",
 
     transition: `
-      background-color .5s ease 
-      box-shadow .75s ease 
-      border .75s ease
+      background-color 2s ease 
+      box-shadow 2s ease 
+      border 2s ease
     `,
   };
-
-  function handleSearch(e) {
-    console.log(e.target.value);
-  }
 
   return (
     <header>
       <nav style={stylesHeader}>
         <GiMountains className="logo" size="3rem" color="hsl(0 0% 100%)" />
         <h1>Skiline</h1>
-        <input
-          onChange={(e) => handleSearch(e)}
-          className="search"
-          type="text"
-          placeholder="Search"
-        ></input>
+        <div className={styles.searchWrapper}>
+          <SearchBar
+            setSearchResults={setSearchResults}
+            clickedResult={clickedResult}
+            setClickedResult={setClickedResult}
+            setShowResults={setShowResults}
+            mtnForecastData={mtnForecastData}
+            setMtnForecastData={setMtnForecastData}
+            mtnCoordinates={mtnCoordinates}
+            setMtnCoordinates={setMtnCoordinates}
+          />
+          <SearchResultsList
+            searchResults={searchResults}
+            setClickedResult={setClickedResult}
+            showResults={showResults}
+            setShowResults={setShowResults}
+          />
+        </div>
       </nav>
     </header>
   );
