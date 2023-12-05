@@ -266,8 +266,8 @@ export default function Forecast() {
           </span>
         </span>
 
-        {showFullForecast && <ForecastDetails />}
-        <div className={styles.previewWrapper}>{forecastPreview()}</div>
+        {showFullForecast && clickedResult && <ForecastDetails />}
+        {clickedResult && <div className={styles.previewWrapper}>{forecastPreview()}</div>}
       </div>
     </>
   );
