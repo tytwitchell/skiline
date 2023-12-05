@@ -4,12 +4,6 @@ import Header from "./components/Header/Header";
 import Forecast from "./components/Forecast/Forecast";
 import Footer from "./components/Footer/Footer";
 
-/**
- * 1) logic for search
- * 2) dark mode
- * 3) brainstorm next feat to add
- */
-
 const AppContext = createContext();
 export { AppContext };
 
