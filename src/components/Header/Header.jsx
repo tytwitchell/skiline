@@ -6,11 +6,18 @@ import { AppContext } from "../../App";
 import SearchResultsList from "./SearchResultsList";
 
 export default function Header() {
-  const { darkMode } = useContext(AppContext);
+  const {
+    darkMode,
+    mtnForecastData,
+    setMtnForecastData,
+    clickedResult,
+    setClickedResult,
+    mtnCoordinates,
+    setMtnCoordinates,
+  } = useContext(AppContext);
   const [searchResults, setSearchResults] = useState(null);
   const [showResults, setShowResults] = useState(false);
-  const [clickedResult, setClickedResult] = useState(null);
-  const [mtnCoordinates, setMtnCoordinates] = useState({});
+  // const [clickedResult, setClickedResult] = useState(null);
 
   const stylesHeader = {
     backgroundColor: darkMode
@@ -52,6 +59,10 @@ export default function Header() {
             clickedResult={clickedResult}
             setClickedResult={setClickedResult}
             setShowResults={setShowResults}
+            mtnForecastData={mtnForecastData}
+            setMtnForecastData={setMtnForecastData}
+            mtnCoordinates={mtnCoordinates}
+            setMtnCoordinates={setMtnCoordinates}
           />
           <SearchResultsList
             searchResults={searchResults}

@@ -6,7 +6,7 @@ import { BsSnow2 } from "react-icons/bs";
 import { TbSunMoon } from "react-icons/tb";
 
 export default function Forecast() {
-  const { data, darkMode, setDarkMode } = useContext(AppContext);
+  const { data, darkMode, setDarkMode, clickedResult } = useContext(AppContext);
   const [apiData, setApiData] = useState([]);
   const [locationData, setLocationData] = useState([]);
   const [forecastData, setForecastData] = useState([]);
@@ -215,7 +215,7 @@ export default function Forecast() {
             <span className={styles.forecast} style={stylesForecast}></span>
             <div
               className={styles.forecastDetailWrapper}
-              style={(stylesBorder, stylesTextColor)}
+              style={{...stylesBorder, ...stylesTextColor}}
             >
               <span className={styles.dateName} style={stylesDateColor}>
                 {dateVal.dayName}
@@ -254,16 +254,16 @@ export default function Forecast() {
     <>
       <div className={styles.forecastContainer}>
         <span className={styles.mtnName} style={stylesMtnName}>
-          {locationData.name}
+          {clickedResult && `${clickedResult}, ${locationData.region}`}
           <span className={styles.backdrop}>
             <span className={styles.lightDark} style={stylesLightDarkEl}></span>
+            <TbSunMoon
+              size=".8em"
+              onClick={toggleDarkMode}
+              style={stylesRotate}
+              className={styles.lightDarkIcon}
+            />
           </span>
-          <TbSunMoon
-            size=".8em"
-            onClick={toggleDarkMode}
-            style={stylesRotate}
-            className={styles.lightDarkIcon}
-          />
         </span>
 
         {showFullForecast && <ForecastDetails />}

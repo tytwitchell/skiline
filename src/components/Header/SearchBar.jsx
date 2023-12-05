@@ -7,10 +7,13 @@ export default function SearchBar({
   clickedResult,
   setClickedResult,
   setShowResults,
+  setMtnForecastData,
+  mtnForecastData,
+  mtnCoordinates,
+  setMtnCoordinates,
 }) {
   const [input, setInput] = useState("");
   const [mtnLabel, setMtnLabel] = useState("");
-  const [mtnForecastData, setMtnForecastData] = useState("");
 
   useEffect(() => {
     let keys = [];
@@ -23,6 +26,19 @@ export default function SearchBar({
     setMtnLabel(keys);
     setMtnForecastData(mountainData);
   }, []);
+
+  useEffect(() => {
+    if (mtnForecastData && clickedResult) {
+      const targetMtnData = mtnForecastData.find(
+        (mtn) => mtn.label === clickedResult
+      );
+
+      const coordinates = { lat: targetMtnData.lat, lon: targetMtnData.lon };
+
+      setMtnCoordinates(coordinates);
+    }
+  }, [clickedResult]);
+
 
   const fetchData = (value) => {
     const searchResults = mtnLabel.filter((data) => {

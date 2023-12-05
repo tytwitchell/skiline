@@ -16,16 +16,20 @@ export { AppContext };
 export default function App() {
   const [data, setData] = useState({});
   const [darkMode, setDarkMode] = useState(false);
+  const [mtnForecastData, setMtnForecastData] = useState("");
+  const [clickedResult, setClickedResult] = useState(null);
+  const [mtnCoordinates, setMtnCoordinates] = useState({});
+  const { lat, lon } = mtnCoordinates
 
+  // console.log(mtnForecastData, clickedResult);
 
   useEffect(() => {
-  
     const fetchData = async () => {
       try {
         const response = await fetch(
           `http://api.weatherapi.com/v1/forecast.json
             ?key=7e7e986488a04a789cf233454232911
-            &q=colorado
+            &q=${lat + "," + lon}
             &days=3
             &aqi=no
             &alerts=no`
@@ -41,8 +45,9 @@ export default function App() {
         console.error("Error fetching data:", error);
       }
     };
+
     fetchData();
-  }, []);
+  }, [mtnCoordinates]);
 
   console.log("data in app", data);
 
@@ -53,7 +58,17 @@ export default function App() {
 
   return (
     <AppContext.Provider
-      value={{ data, darkMode, setDarkMode }}
+      value={{
+        data,
+        darkMode,
+        setDarkMode,
+        mtnForecastData,
+        setMtnForecastData,
+        clickedResult,
+        setClickedResult,
+        mtnCoordinates,
+        setMtnCoordinates,
+      }}
     >
       <span class="background-main"></span>
       <span class="background-texture" style={stylesDarkBgColor}></span>
