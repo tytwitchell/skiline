@@ -202,7 +202,7 @@
     grid-template-rows: repeat(2, auto);
     max-width: 450px;
     font-size: 20px;
-    margin-top: 0rem;
+    margin-top: -1rem;
   }
 
   .mtnName {
