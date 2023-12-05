@@ -39,15 +39,6 @@ export default function Forecast() {
     }
   }, [apiData]);
 
-  // function toggleDarkMode() {
-  //   setDarkMode((prevDarkMode) => !prevDarkMode);
-  // }
-
-  // const stylesRotate = {
-  //   transform: darkMode ? "rotate(180deg)" : "none",
-  //   transition: "transform 1s ease",
-  // };
-
   const stylesDateColor = {
     color: darkMode ? "hsl(0 0% 75% / 0.8)" : "hsl(0 0% 35% / 0.8)",
     transition: "color 1s ease",
@@ -95,18 +86,6 @@ export default function Forecast() {
           0 1px hsl(0 0% 98% / 0.75)`,
     transition: "backgroundColor 1s ease boxShadow 1s ease color 1s ease",
   };
-
-  // const stylesLightDarkEl = {
-  //   background: darkMode
-  //     ? "linear-gradient(transparent 50%, hsl(0 0% 30% / 0.5)), hsl(0 0% 0%)"
-  //     : "linear-gradient(transparent 50%, hsl(0 0% 70% / 0.5)), hsl(0 0% 95%)",
-  //   boxShadow: "0 -1px inset hsl(0 0% 0% / 0.35)",
-  //   transform: darkMode ? "rotate(180deg)" : "none",
-  //   border: darkMode
-  //     ? "1px solid hsl(0 0% 100% / 0.1)"
-  //     : "1px solid hsl(0 0% 95% / .1)",
-  //   transition: "background 1s ease boxShadow 1s ease transform 1s ease",
-  // };
 
   function forecastPreview() {
     if (forecastData && forecastData.length > 0) {
@@ -195,7 +174,6 @@ export default function Forecast() {
 
   function ForecastDetails() {
     if (showFullForecast && fullForecastData) {
-
       const html = fullForecastData.map((data) => {
         const { day, date } = data;
         const {
@@ -215,7 +193,7 @@ export default function Forecast() {
             <span className={styles.forecast} style={stylesForecast}></span>
             <div
               className={styles.forecastDetailWrapper}
-              style={{...stylesBorder, ...stylesTextColor}}
+              style={{ ...stylesBorder, ...stylesTextColor }}
             >
               <span className={styles.dateName} style={stylesDateColor}>
                 {dateVal.dayName}
@@ -253,21 +231,16 @@ export default function Forecast() {
   return (
     <>
       <div className={styles.forecastContainer}>
-        <span className={styles.mtnName} style={stylesMtnName}>
-          {clickedResult && `${clickedResult}, ${locationData.region}`}
-          {/* <span className={styles.backdrop}>
-            <span className={styles.lightDark} style={stylesLightDarkEl}></span>
-            <TbSunMoon
-              size=".8rem"
-              onClick={toggleDarkMode}
-              style={stylesRotate}
-              className={styles.lightDarkIcon}
-            />
-          </span> */}
-        </span>
+        {clickedResult && (
+          <span className={styles.mtnName} style={stylesMtnName}>
+            {clickedResult && `${clickedResult}, ${locationData.region}`}
+          </span>
+        )}
 
         {showFullForecast && clickedResult && <ForecastDetails />}
-        {clickedResult && <div className={styles.previewWrapper}>{forecastPreview()}</div>}
+        {clickedResult && (
+          <div className={styles.previewWrapper}>{forecastPreview()}</div>
+        )}
       </div>
     </>
   );
