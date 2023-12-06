@@ -72,23 +72,20 @@ export default function Forecast() {
     transition: "border 1s ease",
   };
 
-  // const stylesMtnName = {
-  //   color: darkMode ? "hsl(0 0% 98% / 0.925)" : "hsl(0 0% 4% / 0.8)",
-  //   backgroundColor: darkMode ? "hsl(20, 15%, 85%)" : "hsl(20, 25%, 10%)",
-  //   boxShadow: darkMode
-  //     ? `0 1px inset hsl(0 0% 100% / 0.5),
-  //         0 -10px 20px 10px hsl(200 20% 15% / 0.5) inset,
-  //         0 10px 20px 10px hsl(0 0% 50% / 0.25) inset,
-  //         0 1px hsl(0 0% 2% / 0.75)`
-  //     : `0 1px inset hsl(0 0% 100% / 0.5),
-  //         0 -10px 20px 10px hsl(15 20% 95% / 0.5) inset,
-  //         0 10px 20px 10px hsl(15 20% 80% / 0.2) inset,
-  //         0 1px hsl(0 0% 98% / 0.75)`,
-  //   transition: "backgroundColor 1s ease, boxShadow 1s ease, color 1s ease",
-  // };
-  
-
- 
+  const stylesMtnName = {
+    color: darkMode ? "hsl(0 0% 98% / 0.925)" : "hsl(0 0% 4% / 0.8)",
+    backgroundColor: darkMode ? "hsl(20, 15%, 85%)" : "hsl(20, 25%, 10%)",
+    boxShadow: darkMode
+      ? `0 1px inset hsl(0 0% 100% / 0.5), 
+          0 -10px 20px 10px hsl(200 20% 15% / 0.5) inset,
+          0 10px 20px 10px hsl(0 0% 50% / 0.25) inset,
+          0 1px hsl(0 0% 2% / 0.75)`
+      : `0 1px inset hsl(0 0% 100% / 0.5),
+          0 -10px 20px 10px hsl(15 20% 95% / 0.5) inset,
+          0 10px 20px 10px hsl(15 20% 80% / 0.2) inset, 
+          0 1px hsl(0 0% 98% / 0.75)`,
+    transition: "backgroundColor 1s ease, boxShadow 1s ease, color 1s ease",
+  };
 
   function forecastPreview() {
     if (forecastData && forecastData.length > 0) {
@@ -231,15 +228,11 @@ export default function Forecast() {
   return (
     <>
       <div className={styles.forecastContainer}>
-        {clickedResult && darkMode ? (
-          <span className={`${styles.mtnName} ${styles.mtnNameDark}`}>
+        {clickedResult && (
+          <span className={styles.mtnName} style={stylesMtnName}>
             {clickedResult && `${clickedResult}, ${locationData.region}`}
           </span>
-        ) : clickedResult && !darkMode ? (
-          <span className={styles.mtnName}>
-            {clickedResult && `${clickedResult}, ${locationData.region}`}
-          </span>
-        ) : null}
+        )}
 
         {showFullForecast && clickedResult && <ForecastDetails />}
         {clickedResult && (
