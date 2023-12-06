@@ -2,7 +2,6 @@ import { useContext } from "react";
 import styles from "./footer.module.css";
 import { AppContext } from "../../App";
 import { TbSunMoon } from "react-icons/tb";
-
 import { GiMountains } from "react-icons/gi";
 
 export default function Footer() {

@@ -14,7 +14,6 @@
   font-size: 20px;
 }
 
-
 .mtnName {
   position: relative;
   grid-row: 1;
@@ -27,7 +26,6 @@
   background-image: url("../../assets/whitemtnsbg1.jpg");
   background-position: 50% 58%;
   background-blend-mode: difference;
-  /* color: hsl(180 1% 77%); */
   background-size: cover;
   border: 1px solid hsl(0 0% 88% / 0.25);
   letter-spacing: 0.2ch;
@@ -35,6 +33,22 @@
   padding: 0.75rem;
   border-radius: 8px;
   opacity: 0.9;
+
+  color: hsl(0 0% 4% / 0.8);
+  background-color: hsl(20, 25%, 10%);
+  box-shadow: 0 1px inset hsl(0 0% 100% / 0.5),
+    0 -10px 20px 10px hsl(15 20% 95% / 0.5) inset,
+    0 10px 20px 10px hsl(15 20% 80% / 0.2) inset, 0 1px hsl(0 0% 98% / 0.75);
+  transition: "backgroundColor 1s ease, boxShadow 1s ease, color 1s ease";
+}
+
+.mtnNameDark {
+  color: hsl(0 0% 98% / 0.925);
+  background-color: hsl(20, 15%, 85%);
+  box-shadow: 0 1px inset hsl(0 0% 100% / 0.5),
+    0 -10px 20px 10px hsl(200 20% 15% / 0.5) inset,
+    0 10px 20px 10px hsl(0 0% 50% / 0.25) inset, 0 1px hsl(0 0% 2% / 0.75);
+  transition: "backgroundColor 1s ease, boxShadow 1s ease, color 1s ease";
 }
 
 .previewWrapper {
@@ -62,7 +76,6 @@
 .forecastPreview:focus {
   cursor: pointer;
   padding: 0.5rem 1.53rem;
-  /* background-color: hsl(0, 0%, 8%); */
   background-color: hsl(200, 30%, 93%, 0.8);
   border: hsl(0, 0%, 7%, 0.8);
   box-shadow: 0 2px inset hsl(0 0% 98%),
@@ -101,7 +114,7 @@
 }
 
 .totalSnow {
-  margin-top: .5rem;
+  margin-top: 0.5rem;
   letter-spacing: var(--letterSpacing);
   margin-right: -0.3em;
 }
@@ -124,7 +137,7 @@
   width: 100%;
   opacity: 1;
   -webkit-filter: blur(2px);
-          filter: blur(2px);
+  filter: blur(2px);
   z-index: -1;
 }
 
@@ -215,14 +228,14 @@
   .previewWrapper {
     grid-row: 2;
     grid-column: 1;
-    font-size: 1rem
+    font-size: 1rem;
   }
 
   .forecastDetailWrapper {
     border-radius: 25px;
     display: grid;
     grid-template-columns: auto auto;
-    font-size: 1.1rem
+    font-size: 1.1rem;
   }
 
   .forecastDetailWrapper > img {
@@ -245,6 +258,6 @@
     display: flex;
     flex-direction: row;
     min-width: 100%;
-    font-size: 1.1rem
+    font-size: 1.1rem;
   }
 }
