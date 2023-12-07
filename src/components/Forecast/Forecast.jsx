@@ -51,17 +51,17 @@ export default function Forecast() {
 
   const stylesForecast = {
     backgroundColor: darkMode
-      ? "hsl(200, 15%, 10%, 0.8)"
-      : "hsl(200, 30%, 91%, 0.8)",
+      ? "hsl(200, 15%, 12%, 0.8)"
+      : "hsl(200, 30%, 89%, 0.8)",
     boxShadow: darkMode
-      ? `0 1px inset hsl(0 0% 100% / 0.5),
+      ? `0 1px inset hsl(0 0% 99% / 0.5),
           0 -10px 20px 10px hsl(0 0% 0% / 0.5) inset,
           0 10px 20px 10px hsl(0 0% 50% / 0.25) inset,
           0 1px hsl(0 0% 2% / 0.75)`
       : `0 2px inset hsl(0 0% 98%),
-          0 -10px 20px 10px hsl(0 0% 96% / 0.5) inset, 
+          0 -10px 20px 10px hsl(0 0% 94% / 0.5) inset, 
           0 10px 20px 10px hsl(0 0% 78% / 0.2) inset, 
-          0 2px hsl(0 0% 96%)`,
+          0 2px hsl(0 0% 94%)`,
     transition: "backgroundColor 1s ease boxShadow 1s ease",
   };
 
