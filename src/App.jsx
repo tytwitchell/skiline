@@ -14,7 +14,7 @@ export default function App() {
   const [clickedResult, setClickedResult] = useState(null);
   const [mtnCoordinates, setMtnCoordinates] = useState({});
   const { lat, lon } = mtnCoordinates;
-  
+
   useEffect(() => {
     const fetchData = async () => {
       try {

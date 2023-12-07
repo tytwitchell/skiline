@@ -2,13 +2,9 @@
   font-family: "Geist Sans", sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  /* color-scheme: light dark; */
   --letterSpacing: 0.1ch;
   --color-transparent: hsl(0 0% 10% / 0.85);
   text-rendering: optimizeLegibility;
-  /* font-synthesis: none; */
-  /* -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; */
 }
 
 * {
@@ -21,7 +17,6 @@ body {
   position: relative;
   height: 100vh;
 }
-
 
 .background-main {
   position: absolute;

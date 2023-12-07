@@ -37,15 +37,10 @@ export default function SearchResultsList({
     }, 500);
   }
 
-
-
-
   return (
     <>
       {showResults && resultHtml && (
-        <div className={styles.resultsList}>
-          {resultHtml}
-        </div>
+        <div className={styles.resultsList}>{resultHtml}</div>
       )}
     </>
   );

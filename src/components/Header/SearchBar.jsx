@@ -39,7 +39,6 @@ export default function SearchBar({
     }
   }, [clickedResult]);
 
-
   const fetchData = (value) => {
     const searchResults = mtnLabel.filter((data) => {
       const dataLowerCase = data.toLowerCase();

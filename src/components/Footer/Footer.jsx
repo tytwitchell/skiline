@@ -21,8 +21,7 @@ export default function Footer() {
     border: darkMode
       ? "1.5px solid hsl(0 0% 97% / .4)"
       : "1.5px solid hsl(0 0% 4% / .4)",
-    transition:
-      "border 1s ease",
+    transition: "border 1s ease",
   };
 
   const stylesColor = {

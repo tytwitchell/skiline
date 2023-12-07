@@ -3,7 +3,6 @@ import styles from "./forcast.module.css";
 import { AppContext } from "../../App";
 import uuid from "react-uuid";
 import { BsSnow2 } from "react-icons/bs";
-// import { TbSunMoon } from "react-icons/tb";
 
 export default function Forecast() {
   const { data, darkMode, setDarkMode, clickedResult } = useContext(AppContext);
