@@ -74,9 +74,10 @@ export default function SearchBar({
         onChange={(e) => handleChange(e.target.value)}
         className={styles.searchBar}
         type="text"
-        placeholder="Search"
+        placeholder="Search for ski mountain"
         value={handleValue()}
-      ></input>
+      >
+      </input>
     </>
   );
 }
