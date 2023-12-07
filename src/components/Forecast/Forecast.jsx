@@ -177,11 +177,10 @@ export default function Forecast() {
           maxtemp_f,
           avgtemp_f,
           mintemp_f,
-          totalprecip_in,
           totalsnow_cm,
         } = day;
         const totalSnowIn = Math.round(((totalsnow_cm / 2.54) * 100) / 100);
-        const { text, icon, code } = condition;
+        const { icon } = condition;
         const dateVal = handleDate(date);
 
         return (
