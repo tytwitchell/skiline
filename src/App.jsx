@@ -44,7 +44,7 @@ export default function App() {
   console.log("data in app", data);
 
   const stylesDarkBgColor = {
-    backgroundColor: darkMode ? "hsl(200 30% 8% )" : "hsl(200 20% 85%)",
+    backgroundColor: darkMode ? "hsl(200 30% 8% )" : "hsl(200 20% 80%)",
     transition: "background-color .5s ease",
   };
 
