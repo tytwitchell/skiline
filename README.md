@@ -1,6 +1,8 @@
 # SKILINE
 
-A weather app that displays forecast details specific to ski mountains. The UI is built with React and fetches three day weather forecasts from weatherapi.com
+I am an avid skier, and I've always been frustrated by how complicated ski weather apps can be. I built this application as a resource for the relevant information I need to make a decision about which mountain to visit on the weekends.
+
+The UI is built with React and fetches three day weather forecasts from weatherapi.com.
 
 <img width="551" alt="Skiline pic 1" src="https://github.com/tytwitchell/skiline/assets/135183794/44691a34-50f4-4ab8-b1c1-957150e1312e">
 
